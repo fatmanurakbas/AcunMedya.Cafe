@@ -1,0 +1,51 @@
+﻿@model AcunMedya.Cafe.Entities.Adres
+
+@{
+    ViewData["Title"] = "UpdateAdres";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Adres Güncelleme Sayfası </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Güncelleme İşlemi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Adres</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="AdresId" />
+
+                        <label>Lokasyon</label>
+                        <input asp-for="Location" class="form-control" />
+                        <br />
+
+                        <label>Açık Saatler</label>
+                        <input asp-for="OpenHours" class="form-control" />
+                        <br />
+
+                        <label>Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <br />
+
+                        <label>Telefon</label>
+                        <input asp-for="Call" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-primary">
+                            <i class="fa fa-save"></i> Güncelle
+                        </button>
+                        <a href="/Adres/Index" class="btn btn-light">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

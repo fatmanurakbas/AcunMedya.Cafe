@@ -1,0 +1,44 @@
+﻿@model AcunMedya.Cafe.Entities.SosyalMedya
+@{
+    ViewData["Title"] = "Sosyal Medya Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Yeni Sosyal Medya Hesabı Ekle </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/SosyalMedya/Index">Sosyal Medya</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ekle</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label>Platform Adı</label>
+                            <input asp-for="Name" class="form-control" placeholder="Örn: Instagram" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bağlantı URL</label>
+                            <input asp-for="Url" class="form-control" placeholder="https://instagram.com/kullanici" />
+                            <span asp-validation-for="Url" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i> Kaydet
+                        </button>
+                        <a href="/SosyalMedya/Index" class="btn btn-light">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

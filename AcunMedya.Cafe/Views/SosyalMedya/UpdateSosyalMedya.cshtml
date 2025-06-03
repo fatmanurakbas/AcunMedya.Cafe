@@ -1,0 +1,22 @@
+﻿@model AcunMedya.Cafe.Entities.SosyalMedya
+@{
+    ViewData["Title"] = "Sosyal Medya Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <h3 class="page-title"> Sosyal Medya Hesabını Güncelle </h3>
+    <form method="post">
+        <input type="hidden" asp-for="SosyalMedyaId" />
+
+        <label>Platform Adı</label>
+        <input asp-for="Name" class="form-control" />
+        <br />
+
+        <label>Bağlantı URL</label>
+        <input asp-for="Url" class="form-control" />
+        <br />
+
+        <button class="btn btn-success">Güncelle</button>
+    </form>
+</div>

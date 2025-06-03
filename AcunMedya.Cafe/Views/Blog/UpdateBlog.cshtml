@@ -1,0 +1,58 @@
+﻿@model AcunMedya.Cafe.Entities.Blog
+
+@{
+    ViewData["Title"] = "UpdateBlog";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Blog Güncelleme Sayfası </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Güncelleme İşlemi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="BlogId" />
+
+                        <label>Başlık</label>
+                        <input asp-for="Title" class="form-control" />
+                        <br />
+
+                        <label>Alt Başlık</label>
+                        <input asp-for="Subtitle" class="form-control" />
+                        <br />
+
+                        <label>Açıklama</label>
+                        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                        <br />
+
+                        <label>Mevcut Görsel</label><br />
+                        <img src="@Model.ImageUrl" style="width:100px;height:auto;" />
+                        <br /><br />
+
+                        <label>Yeni Görsel Seç (Opsiyonel)</label>
+                        <input type="file" name="imageFile" class="form-control" />
+                        <br />
+
+                        <input type="hidden" asp-for="ImageUrl" />
+
+                        <button class="btn btn-primary">
+                            <i class="fa fa-save"></i> Güncelle
+                        </button>
+                        <a href="/Blog/Index" class="btn btn-light">İptal</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

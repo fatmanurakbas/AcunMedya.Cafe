@@ -1,0 +1,43 @@
+﻿@model List<AcunMedya.Cafe.Entities.Blog>
+
+<section class="blog-area section-gap" id="blog">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-10">
+                <div class="title text-center">
+                    <h1 class="mb-10">Son Blog Yazılarımız</h1>
+                    <p>Kahve dünyamızdan en güncel haberleri keşfedin.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach (var blog in Model.Take(2))
+            {
+                <div class="col-lg-6 col-md-6 single-blog">
+                    <img class="img-fluid" src="@blog.ImageUrl" alt="@blog.Title" />
+                    <ul class="post-tags">
+                        <li><a href="#">Yazı</a></li>
+                        <li><a href="#">Güncel</a></li>
+                    </ul>
+                    <a href="#"><h4>@blog.Title</h4></a>
+                    <h6>@blog.Subtitle</h6>
+                    <p>@blog.Description</p>
+                    <p class="post-date">
+                        @blog.Time.ToString("dd MMMM yyyy", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .single-blog img {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+</style>

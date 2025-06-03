@@ -1,0 +1,59 @@
+﻿@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body>
+
+	<header id="header" id="home">
+		@await Component.InvokeAsync("_DefaultAdresComponentPartial")
+		@await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+	</header><!-- #header -->
+	<!-- start banner Area -->
+	@await Component.InvokeAsync("_DefaultFeatureComponentPartial")
+	<!-- End banner Area -->
+	<!-- Start video-sec Area -->
+	@await Component.InvokeAsync("_DefaultAboutComponentPartial")
+
+	<!-- End video-sec Area -->
+	<!-- Start menu Area -->
+	@await Component.InvokeAsync("_DefaultProdutComponentPartial")
+	<!-- End menu Area -->
+	<!-- Start gallery Area -->
+	@await Component.InvokeAsync("_DefaultGalleryComponentPartial")
+
+	<!-- End gallery Area -->
+	<!-- Start review Area -->
+	<section class="review-area section-gap" id="review">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-10">
+					<div class="title text-center">
+						<h1 class="mb-10">Kahve Tutkunlarının Görüşleri</h1>
+						<p>Lezzetli anlarını paylaşan misafirlerimize teşekkür ederiz.</p>
+					</div>
+				</div>
+			</div>
+			@await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
+			@await Component.InvokeAsync("_DefaultStatisticCompoentPartial")
+
+		</div>
+	</section>
+	<!-- End review Area -->
+	<!-- Start blog Area -->
+	@await Component.InvokeAsync("_DefaultBlogComponentPartial")
+
+	<!-- End blog Area -->
+	<!-- start footer Area -->
+	@await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+	<!-- End footer Area -->
+	@await Component.InvokeAsync("_DefaultScriptComponentPartial")
+</body>
+</html>
+
+
+
+

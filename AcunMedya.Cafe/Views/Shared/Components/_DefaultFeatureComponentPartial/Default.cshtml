@@ -1,0 +1,14 @@
+﻿<section class="banner-area" id="home" style="background-image: url('@ViewBag.ImageUrl'); background-size: cover; background-position: center;">
+    <img src="@ViewBag.ImageUrlbanner" alt="Banner Görseli" class="banner-background" style="width: 100px; height: auto; position: absolute; top: 20px; left: 20px; z-index: 10;" />
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-start">
+            <div class="banner-content col-lg-7">
+                <h6 class="text-white text-uppercase">@ViewBag.SubTitle</h6>
+                <h1>
+                    @ViewBag.Title
+                </h1>
+                <a href="#" class="primary-btn text-uppercase">Sende Al</a>
+            </div>
+        </div>
+    </div>
+</section>
