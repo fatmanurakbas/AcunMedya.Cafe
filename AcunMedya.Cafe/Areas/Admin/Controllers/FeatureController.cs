@@ -1,11 +1,15 @@
 ﻿using AcunMedya.Cafe.Context;
 using AcunMedya.Cafe.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AcunMedya.Cafe.Controllers
+namespace AcunMedya.Cafe.Areas.Admin.Controllers
 {
+   // [Authorize]
+    [Area("Admin")]
     public class FeatureController : Controller
     {
+
         private readonly CafeContext _context;
 
         public FeatureController(CafeContext context)

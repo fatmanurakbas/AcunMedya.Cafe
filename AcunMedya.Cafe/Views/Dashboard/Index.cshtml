@@ -1,56 +1,84 @@
 ﻿@model AcunMedya.Cafe.Controllers.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
 
-<div class="container-fluid page-body-wrapper">
-    <div class="main-panel">
-        <div class="content-wrapper">
-            <h3 class="page-title">Dashboard</h3>
-            <div class="row">
+<div class="row">
+    <!-- En Çok Tercih Edilen Kategori -->
+    <div class="col-md-4 stretch-card grid-margin">
+        <div class="card bg-gradient-info card-img-holder text-white">
+            <div class="card-body">
+                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle image" />
+                <h4 class="font-weight-normal mb-3">En Çok Tercih Edilen Kategori <i class="mdi mdi-star mdi-24px float-right"></i></h4>
+                <h2 class="mb-5">@Model.MostPreferredCategory</h2>
+            </div>
+        </div>
+    </div>
 
-                <!-- Grafik Paneli -->
-                <div class="col-lg-6 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">En Çok Tercih Edilen Kategori</h4>
-                            <canvas id="categoryChart"></canvas>
-                        </div>
-                    </div>
-                </div>
+    <!-- En Fazla Mesaj Atılan Gün -->
+    <div class="col-md-4 stretch-card grid-margin">
+        <div class="card bg-gradient-success card-img-holder text-white">
+            <div class="card-body">
+                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle image" />
+                <h4 class="font-weight-normal mb-3">En Fazla Mesaj Atılan Gün <i class="mdi mdi-message-outline mdi-24px float-right"></i></h4>
+                <h2 class="mb-5">@Model.MostMessagedDay?.ToString("dd MMMM yyyy") ?? "Veri Yok"</h2>
+            </div>
+        </div>
+    </div>
 
+    <!-- En Fazla Blog Yazılan Gün -->
+    <div class="col-md-4 stretch-card grid-margin">
+        <div class="card bg-gradient-warning card-img-holder text-white">
+            <div class="card-body">
+                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle image" />
+                <h4 class="font-weight-normal mb-3">En Fazla Blog Yazılan Gün <i class="mdi mdi-book-open mdi-24px float-right"></i></h4>
+                <h2 class="mb-5">@Model.MostBloggedDay?.ToString("dd MMMM yyyy") ?? "Veri Yok"</h2>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const ctx = document.getElementById('categoryChart').getContext('2d');
-      const categoryName = '@Model.MostPreferredCategory';
+<!-- İstatistik Tablosu -->
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Genel İstatistikler</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>İstatistik</th>
+                                <th>Değer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Toplam Ürün</td>
+                                <td>@Model.TotalProducts</td>
+                            </tr>
+                            <tr>
+                                <td>Toplam Kategori</td>
+                                <td>@Model.TotalCategories</td>
+                            </tr>
+                            <tr>
+                                <td>Toplam Mesaj</td>
+                                <td>@Model.TotalMessages</td>
+                            </tr>
+                            <tr>
+                                <td>Toplam Blog</td>
+                                <td>@Model.TotalBlogs</td>
+                            </tr>
+                            <tr>
+                                <td>Okunmamış Mesaj Sayısı</td>
+                                <td>@Model.UnreadMessages</td>
+                            </tr>
+                        </tbody>
 
-      const data = {
-        labels: [categoryName],
-        datasets: [{
-          label: 'En Çok Tercih Edilen Kategori',
-          data: [1],
-          backgroundColor: ['rgba(54, 162, 235, 0.7)'],
-          borderColor: ['rgba(54, 162, 235, 1)'],
-          borderWidth: 1
-        }]
-      };
-
-      const config = {
-        type: 'bar',
-        data: data,
-        options: {
-          indexAxis: 'y',
-          responsive: true,
-          plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
-          }
-        }
-      };
-
-      new Chart(ctx, config);
-    });
-</script>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

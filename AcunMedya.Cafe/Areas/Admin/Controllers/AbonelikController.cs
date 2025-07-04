@@ -1,9 +1,13 @@
-﻿using AcunMedya.Cafe.Context;
+﻿using System.Diagnostics.CodeAnalysis;
+using AcunMedya.Cafe.Context;
 using AcunMedya.Cafe.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AcunMedya.Cafe.Controllers
+namespace AcunMedya.Cafe.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+   // [Authorize]
     public class AbonelikController : Controller
     {
         private readonly CafeContext _context;
@@ -18,6 +22,7 @@ namespace AcunMedya.Cafe.Controllers
             var values = _context.Aboneliks.ToList();
             return View(values);
         }
+
 
         [HttpGet]
         public IActionResult AddAbonelik()
@@ -39,9 +44,16 @@ namespace AcunMedya.Cafe.Controllers
         public IActionResult DeleteAbonelik(int id)
         {
             var value = _context.Aboneliks.Find(id);
-            _context.Aboneliks.Remove(value);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if (value != null)
+            {
+                _context.Aboneliks.Remove(value);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            // Eğer bulunamazsa hata sayfası veya yönlendirme
+            return NotFound(); // veya View("Error");
         }
+
     }
 }

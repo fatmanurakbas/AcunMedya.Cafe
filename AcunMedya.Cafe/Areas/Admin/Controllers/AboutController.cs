@@ -1,16 +1,19 @@
 ﻿using AcunMedya.Cafe.Context;
 using AcunMedya.Cafe.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace AcunMedya.Cafe.Controllers
+namespace AcunMedya.Cafe.Areas.Admin.Controllers
 {
-    public class GalleryController : Controller
+   // [Authorize]
+    [Area("Admin")]
+    public class AboutController : Controller
     {
         private readonly CafeContext _context;
 
-        public GalleryController(CafeContext context)
+        public AboutController(CafeContext context)
         {
             _context = context;
         }
@@ -18,21 +21,20 @@ namespace AcunMedya.Cafe.Controllers
 
         public IActionResult Index()
         {
-            var galleryList = _context.Galleries.ToList();
-            return View(galleryList);
+            //Eager Loading
+            var values = _context.Abouts.ToList();
+            return View(values);
         }
 
-
         [HttpGet]
-        public IActionResult AddGallery()
+        public IActionResult AddAbout()
         {
 
-            
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddGallery(Gallery model)
+        public IActionResult AddAbout(About model)
         {
 
             if (model.ImageFile != null)
@@ -55,24 +57,25 @@ namespace AcunMedya.Cafe.Controllers
                 //dosyayaı fiziksel olarak sunucuya yazar
                 model.ImageFile.CopyTo(stream);
 
-                model.ImageUrl = "/images/" + filename + extension;
+                model.imageUrl = "/images/" + filename + extension;
             }
 
-            _context.Galleries.Add(model);
+            _context.Abouts.Add(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult UpdateGallery(int id)
+        public IActionResult UpdateAbout(int id)
         {
 
-            var value = _context.Galleries.Find(id);
+
+            var value = _context.Abouts.Find(id);
             return View(value);
         }
 
         [HttpPost]
-        public IActionResult UpdateGallery(Gallery model)
+        public IActionResult UpdateAbout(About model)
         {
             if (model.ImageFile != null)
             {
@@ -94,19 +97,26 @@ namespace AcunMedya.Cafe.Controllers
                 //dosyayaı fiziksel olarak sunucuya yazar
                 model.ImageFile.CopyTo(stream);
 
-                model.ImageUrl = "/images/" + filename + extension;
+                model.imageUrl = "/images/" + filename + extension;
             }
 
-            _context.Galleries.Update(model);
+            _context.Abouts.Update(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult DeleteGallery(int id)
+        public IActionResult DeleteAbout(int id)
         {
-            var value = _context.Galleries.Find(id);
-            _context.Galleries.Remove(value);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            var value = _context.Abouts.Find(id);
+            if (value != null)
+            {
+                _context.Abouts.Remove(value);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            // Eğer bulunamazsa hata sayfası veya yönlendirme
+            return NotFound(); // veya View("Error");
         }
+
     }
 }

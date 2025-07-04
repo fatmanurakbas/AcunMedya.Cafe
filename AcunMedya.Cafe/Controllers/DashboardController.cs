@@ -1,9 +1,7 @@
 ﻿using AcunMedya.Cafe.Context;
 using AcunMedya.Cafe.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
 
 namespace AcunMedya.Cafe.Controllers
 {
@@ -51,23 +49,34 @@ namespace AcunMedya.Cafe.Controllers
                 .Select(g => g.Key)
                 .FirstOrDefault();
 
-            // ViewModel'e verileri gönderelim
+            // ✅ ViewModel'e verileri gönderelim
             var model = new DashboardViewModel
             {
                 MostPreferredCategory = categoryName,
                 MostMessagedDay = mostMessagedDay,
-                MostBloggedDay = mostBloggedDay
+                MostBloggedDay = mostBloggedDay,
+                TotalProducts = _context.Products.Count(),
+                TotalCategories = _context.Categories.Count(),
+                TotalMessages = _context.Messages.Count(),
+                TotalBlogs = _context.Blogs.Count(),
+                UnreadMessages = _context.Messages.Count(m => !m.IsRead)
             };
 
             return View(model);
         }
     }
 
-    // ViewModel: Dashboard verilerini View'a taşır
+    // ✅ ViewModel: Dashboard verilerini View'a taşır
     public class DashboardViewModel
     {
         public string MostPreferredCategory { get; set; }
         public DateTime? MostMessagedDay { get; set; }
         public DateTime? MostBloggedDay { get; set; }
+
+        public int TotalProducts { get; set; }
+        public int TotalCategories { get; set; }
+        public int TotalMessages { get; set; }
+        public int TotalBlogs { get; set; }
+        public int UnreadMessages { get; set; }
     }
 }

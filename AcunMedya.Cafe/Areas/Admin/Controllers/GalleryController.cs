@@ -1,16 +1,19 @@
 ﻿using AcunMedya.Cafe.Context;
 using AcunMedya.Cafe.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace AcunMedya.Cafe.Controllers
+namespace AcunMedya.Cafe.Areas.Admin.Controllers
 {
-    public class BlogController : Controller
+    // [Authorize]
+    [Area("Admin")]
+    public class GalleryController : Controller
     {
         private readonly CafeContext _context;
 
-        public BlogController(CafeContext context)
+        public GalleryController(CafeContext context)
         {
             _context = context;
         }
@@ -18,20 +21,21 @@ namespace AcunMedya.Cafe.Controllers
 
         public IActionResult Index()
         {
-            //Eager Loading
-            var values = _context.Blogs.ToList();
-            return View(values);
+            var galleryList = _context.Galleries.ToList();
+            return View(galleryList);
         }
 
+
         [HttpGet]
-        public IActionResult AddBlog()
+        public IActionResult AddGallery()
         {
+
 
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddBlog(Blog model)
+        public IActionResult AddGallery(Gallery model)
         {
 
             if (model.ImageFile != null)
@@ -57,22 +61,21 @@ namespace AcunMedya.Cafe.Controllers
                 model.ImageUrl = "/images/" + filename + extension;
             }
 
-            _context.Blogs.Add(model);
+            _context.Galleries.Add(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult UpdateBlog(int id)
+        public IActionResult UpdateGallery(int id)
         {
 
-
-            var value = _context.Blogs.Find(id);
+            var value = _context.Galleries.Find(id);
             return View(value);
         }
 
         [HttpPost]
-        public IActionResult UpdateBlog(Blog model)
+        public IActionResult UpdateGallery(Gallery model)
         {
             if (model.ImageFile != null)
             {
@@ -97,14 +100,14 @@ namespace AcunMedya.Cafe.Controllers
                 model.ImageUrl = "/images/" + filename + extension;
             }
 
-            _context.Blogs.Update(model);
+            _context.Galleries.Update(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult DeleteBlog(int id)
+        public IActionResult DeleteGallery(int id)
         {
-            var value = _context.Blogs.Find(id);
-            _context.Blogs.Remove(value);
+            var value = _context.Galleries.Find(id);
+            _context.Galleries.Remove(value);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

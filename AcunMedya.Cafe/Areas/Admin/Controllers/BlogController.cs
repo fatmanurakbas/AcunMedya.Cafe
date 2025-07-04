@@ -1,16 +1,19 @@
 ﻿using AcunMedya.Cafe.Context;
 using AcunMedya.Cafe.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace AcunMedya.Cafe.Controllers
+namespace AcunMedya.Cafe.Areas.Admin.Controllers
 {
-    public class AboutController : Controller
+    //[Authorize]
+    [Area("Admin")]
+    public class BlogController : Controller
     {
         private readonly CafeContext _context;
 
-        public AboutController(CafeContext context)
+        public BlogController(CafeContext context)
         {
             _context = context;
         }
@@ -19,19 +22,19 @@ namespace AcunMedya.Cafe.Controllers
         public IActionResult Index()
         {
             //Eager Loading
-            var values = _context.Abouts.ToList();
+            var values = _context.Blogs.ToList();
             return View(values);
         }
 
         [HttpGet]
-        public IActionResult AddAbout()
+        public IActionResult AddBlog()
         {
 
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddAbout(About model)
+        public IActionResult AddBlog(Blog model)
         {
 
             if (model.ImageFile != null)
@@ -54,25 +57,25 @@ namespace AcunMedya.Cafe.Controllers
                 //dosyayaı fiziksel olarak sunucuya yazar
                 model.ImageFile.CopyTo(stream);
 
-                model.imageUrl = "/images/" + filename + extension;
+                model.ImageUrl = "/images/" + filename + extension;
             }
 
-            _context.Abouts.Add(model);
+            _context.Blogs.Add(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult UpdateAbout(int id)
+        public IActionResult UpdateBlog(int id)
         {
 
 
-            var value = _context.Abouts.Find(id);
+            var value = _context.Blogs.Find(id);
             return View(value);
         }
 
         [HttpPost]
-        public IActionResult UpdateAbout(About model)
+        public IActionResult UpdateBlog(Blog model)
         {
             if (model.ImageFile != null)
             {
@@ -94,19 +97,26 @@ namespace AcunMedya.Cafe.Controllers
                 //dosyayaı fiziksel olarak sunucuya yazar
                 model.ImageFile.CopyTo(stream);
 
-                model.imageUrl = "/images/" + filename + extension;
+                model.ImageUrl = "/images/" + filename + extension;
             }
 
-            _context.Abouts.Update(model);
+            _context.Blogs.Update(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult DeleteAbout(int id)
+        public IActionResult DeleteBlog(int id)
         {
-            var value = _context.Abouts.Find(id);
-            _context.Abouts.Remove(value);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            var value = _context.Blogs.Find(id);
+            if (value != null)
+            {
+                _context.Blogs.Remove(value);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            // Eğer bulunamazsa hata sayfası veya yönlendirme
+            return NotFound(); // veya View("Error");
         }
+
     }
 }

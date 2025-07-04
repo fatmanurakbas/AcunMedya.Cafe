@@ -4,16 +4,18 @@ using AcunMedya.Cafe.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace AcunMedya.Cafe.Migrations
 {
-    [DbContext(typeof(CafeContext))]
-    partial class CafeContextModelSnapshot : ModelSnapshot
+
+    partial class mig4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,41 +141,6 @@ namespace AcunMedya.Cafe.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("AcunMedya.Cafe.Entities.DashboardViewModel", b =>
-                {
-                    b.Property<string>("CoffeeNames")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CoffeePreferences")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MostPreferredCategory")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NegativeComments")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NeutralComments")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PositiveComments")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReferenceCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SubscriberCount")
-                        .HasColumnType("int");
-
-                    b.ToTable("DashboardViewModel");
                 });
 
             modelBuilder.Entity("AcunMedya.Cafe.Entities.Feature", b =>

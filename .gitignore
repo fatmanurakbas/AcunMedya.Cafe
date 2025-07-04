@@ -1,0 +1,32 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Rider IDE
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Paket Yönetimi
+packages/
+
+# User-specific files
+*.rsuser
+*.sln.docstates
+
+# Local database
+*.mdf
+*.ldf
+
+# Loglar
+*.log
+
+# Diğer
+*.DS_Store
+*.vscode/

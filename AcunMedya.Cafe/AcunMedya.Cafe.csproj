@@ -49,8 +49,4 @@
     <EditorConfigFiles Remove="C:\Users\90553\source\repos\AcunMedya.Cafe\AcunMedya.Cafe\.editorconfig" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include=".gitignore" />
-  </ItemGroup>
-
 </Project>

@@ -28,8 +28,9 @@ internal class Program
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
             {
-                options.LoginPath = "/Login/Index"; // Login yolu
-                options.LogoutPath = "/Login/Logout"; // Logout yolu
+                options.LoginPath = "/Login/Index";     // Giriş yapılmamışsa yönlendirilecek adres
+                options.LogoutPath = "/Login/Logout";   // Çıkış adresi
+                options.AccessDeniedPath = "/Login/AccessDenied"; // Yetki yoksa yönlendirme (opsiyonel)
             });
 
         var app = builder.Build();
@@ -59,12 +60,11 @@ internal class Program
             pattern: "{controller=Default}/{action=Index}/{id?}");
 
         // 🔟 Area route
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllerRoute(
-                name: "areas",
-                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-        });
+        app.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+
 
         // 1️⃣1️⃣ Uygulamayı başlat
         app.Run();

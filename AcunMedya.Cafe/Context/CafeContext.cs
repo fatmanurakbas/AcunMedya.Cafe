@@ -25,6 +25,14 @@ namespace AcunMedya.Cafe.Context
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<NavbarViewModel> NavbarViewModels { get; set; }
         public DbSet<SosyalMedya> SosyalMedyas { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // DashboardViewModel bir key'e sahip değil, sadece ViewModel olarak kullanılıyor
+            modelBuilder.Entity<DashboardViewModel>().HasNoKey();
+        }
+
 
 
     }
