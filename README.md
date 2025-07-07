@@ -63,7 +63,6 @@ Kod değil, mimari odaklı bir yaklaşımla yapılandırılmıştır.
 
 Uygulamanın bazı bölümlerine ait ekran görüntüleri aşağıda yer almaktadır:
 
-
 ### 📌 Ana Sayfa
 ![Anasayfa](https://github.com/user-attachments/assets/32d4e2c5-823f-49a7-a663-9eb8820f20d8)
 
@@ -71,7 +70,7 @@ Uygulamanın bazı bölümlerine ait ekran görüntüleri aşağıda yer almakta
 ![Hakkımda](https://github.com/user-attachments/assets/b62d5828-85d3-4c3e-aa16-c333556e309a)
 
 ### 📌 Menü Sayfası
-![Menü](https://github.com/user-attachments/assets/32bbe66c-cedd-4a98-8c43-140da5f2c51b)
+![Menü](https://github.com/user-attachments/assets/7dbfeb76-b9a9-49eb-a80a-234fe62e215b)
 ![Menü2](https://github.com/user-attachments/assets/092c9b60-a137-4b68-bebc-213988156ff9)
 ![Menü3](https://github.com/user-attachments/assets/008e4cec-ba5a-4f71-8a91-2edaba26390d)
 
@@ -99,6 +98,12 @@ Uygulamanın bazı bölümlerine ait ekran görüntüleri aşağıda yer almakta
 
 ### 📌 Blog Güncelleme Sayfası
 ![Blog Güncelleme](https://github.com/user-attachments/assets/9a91ee4f-b299-4180-b727-17172b0d1e58)
+
+### 📌 Bildirim Sayfası
+![Bildirimler Admin](https://github.com/user-attachments/assets/a9004374-658e-4903-87bf-c61b1e6f301e)
+
+### 📌 Mesaj Sayfası
+![Mesaj Admin](https://github.com/user-attachments/assets/579817b2-d812-4c1a-b097-244681681760)
 
 ---
 
