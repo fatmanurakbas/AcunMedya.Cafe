@@ -107,6 +107,15 @@ Uygulamanın bazı bölümlerine ait ekran görüntüleri aşağıda yer almakta
 
 ---
 
+## 📜Sürüm Geçmişi
+Bu proje Visual Studio 2022 ile geliştirilmiştir. Güncellemeler ve sürüm geçmişi için repository’yi takip edebilirsiniz.
+
+## 📞Destek
+Bu projeyle ilgili herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen fatmanurakb1616@gmail.com üzerinden iletişime geçin.
+
+## 🎉Teşekkür
+Bu projeyi geliştirirken sağladıkları değerli bilgi, rehberlik ve destekleri için Buse Nur Demirbaş ve Murat Yücedağ’a çok teşekkür ederim. 
+Ayrıca, projeye emeği geçen tüm ekip arkadaşlarıma ve geri bildirimleriyle süreci iyileştiren herkese teşekkür ederim. Gelecekte birlikte daha birçok başarılı projeye imza atmayı diliyorum. 🚀🙏
 
 1. Bu repoyu klonlayın:  
    ```bash
