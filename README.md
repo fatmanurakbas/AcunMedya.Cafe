@@ -107,19 +107,22 @@ Uygulamanın bazı bölümlerine ait ekran görüntüleri aşağıda yer almakta
 ### 📌 Admin Paneli
 ![Admin Profil](https://github.com/user-attachments/assets/61806553-f69b-491c-96ac-9a97aba357c2)
 
-### 📌 Blog Admin
+### 📌 Dashboard Paneli
+![Dashboard](https://github.com/user-attachments/assets/6261015d-3de1-4464-a640-8c7a75fc4c3a)
+
+### 📌 Admin Blog Paneli
 ![Blog Admin](https://github.com/user-attachments/assets/b70afabd-a245-462f-a60d-fee2e8e32a38)
 
-### 📌 Blog Ekleme Sayfası
+### 📌 Blog Ekleme Paneli
 ![Blog Ekleme](https://github.com/user-attachments/assets/09e97541-e0d4-4894-b716-48f642aac884)
 
-### 📌 Blog Güncelleme Sayfası
+### 📌 Blog Güncelleme Paneli
 ![Blog Güncelleme](https://github.com/user-attachments/assets/9a91ee4f-b299-4180-b727-17172b0d1e58)
 
-### 📌 Bildirim Sayfası
+### 📌 Bildirim Paneli
 ![Bildirimler Admin](https://github.com/user-attachments/assets/a9004374-658e-4903-87bf-c61b1e6f301e)
 
-### 📌 Mesaj Sayfası
+### 📌 Mesaj Paneli
 ![Mesaj Admin](https://github.com/user-attachments/assets/579817b2-d812-4c1a-b097-244681681760)
 
 ---
