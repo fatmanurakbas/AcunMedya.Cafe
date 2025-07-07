@@ -1,16 +1,25 @@
-# ☕ AcunMedya Cafe – ASP.NET Core MVC Projesi
+# ☕ AcunMedya Cafe – Kafe Tanıtım ve İçerik Yönetim Sistemi
 
-AcunMedya Cafe, kafe işletmelerinin ürün yönetimi, sipariş takibi, müşteri ilişkileri ve günlük operasyonlarını kolaylaştırmak amacıyla geliştirilmiş web tabanlı bir yönetim sistemidir. Modern yazılım mimarisi ve temiz kod prensipleri ile geliştirilmiştir.
+AcunMedya Cafe, bir kafenin dijital dünyada tanıtımını modern bir altyapıyla gerçekleştirmek, ürünlerini ve hizmetlerini sergilemek, kullanıcı yorumlarını almak ve içerikleri dinamik olarak yönetmek amacıyla geliştirilmiş ASP.NET Core MVC tabanlı kapsamlı bir web uygulamasıdır. Proje, admin paneli desteğiyle hem ziyaretçi tarafını hem de yönetici tarafını etkin bir şekilde sunar.
 
 
 ---
+🚀 **Proje Hakkında**
 
-## 👨‍🏫 Proje Hakkında
+Bu proje, AcunMedya Akademi – C# Programlama Eğitimi kapsamında geliştirilmiştir.
 
-📌 **AcunMedya Akademi** kapsamında,  
-🧠 **Murat Yücedağ** rehberliğinde,  
-👩‍🏫 Değerli hocamız **Buse Nur Demirbaş** anlatımlarıyla  
-ve 👨‍💻 **Abdullah Kuş** hocamızın teknik destekleriyle geliştirilmiştir.
+👨‍🏫 **Eğitmenler:**
+Murat Yücedağ
+Buse Nur Demirbaş
+💡 Teknik Destek: Abdullah Kuş
+
+**Projenin temel amacı, bir kafe işletmesinin:**
+
+- Menüsünü dijital ortamda sergileyebilmesi
+- Kendi blog yazıları ve duyurularını yayınlayabilmesi
+- Görseller ile zengin galeri oluşturabilmesi
+- Müşteri yorumlarını alabilmesi
+- İçeriklerini tamamen kendi kontrolü altında yönetebilmesidir.
 
 **AcunMedya Cafe**, bir kafenin dijital yüzünü modern web teknolojileriyle sunmak amacıyla geliştirilmiş, görsel odaklı ve yönetilebilir bir web uygulamasıdır.  
 Admin paneli üzerinden içerikler kolayca **eklenebilir**, **güncellenebilir** ve **silinebilir**.  
@@ -18,15 +27,23 @@ Kod değil, mimari odaklı bir yaklaşımla yapılandırılmıştır.
 
 ---
 
-## 🌟 Temel Özellikler
+🌐 **Genel Özellikler**
 
-- ✅ Kullanıcı dostu, sade ve modern arayüz  
-- ✅ Responsive (mobil uyumlu) tasarım  
-- ✅ Dinamik olarak yönetilebilen içerik alanları  
-- ✅ Videolu tanıtım alanı  
-- ✅ Admin paneli için altyapı (geliştirilebilir yapı)  
-- ✅ Ziyaretçi yorumları ve görsel galeriler  
-- ✅ Katmanlı mimari ile sürdürülebilir kod yapısı  
+- 👩‍💼 Ziyaretçi Paneli
+- 🏠 Ana Sayfa – Tanıtım, slider, kısaca içerik özeti
+- 👩‍💻 Hakkımızda – Kafenin hikayesi ve vizyonu
+- ☕ Menü – Tüm ürünlerin görselleri, açıklamaları ve fiyatları
+- 📰 Blog – Duyurular, tarifler, etkinlik haberleri
+- 📸 Galeri – Kafeye ait ürün ve ortam fotoğrafları
+- 💬 Yorumlar – Ziyaretçi değerlendirmeleri
+
+🛠️ **Admin Paneli**
+
+- CRUD işlemleri ile içerik ekleme, silme, güncelleme
+- Blog, Menü, Galeri, Yorum gibi modüllerin yönetimi
+- Kullanıcı doğrulama ve oturum kontrolü
+- Yönetici arayüzü sade ve kullanışlıdır
+- Dinamik olarak çalışan içerik yönetim sistemi  
 
 ---
 
@@ -119,4 +136,4 @@ Ayrıca, projeye emeği geçen tüm ekip arkadaşlarıma ve geri bildirimleriyle
 
 1. Bu repoyu klonlayın:  
    ```bash
-   git clone https://github.com/kullaniciAdi/AcunMedya.Cafe.git
+   https://github.com/fatmanurakbas/AcunMedya.Cafe.git
