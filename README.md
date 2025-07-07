@@ -9,9 +9,9 @@ AcunMedya Cafe, bir kafenin dijital dünyada tanıtımını modern bir altyapıy
 Bu proje, AcunMedya Akademi – C# Programlama Eğitimi kapsamında geliştirilmiştir.
 
 👨‍🏫 **Eğitmenler:**
-Murat Yücedağ
-Buse Nur Demirbaş
-💡 Teknik Destek: Abdullah Kuş
+- Murat Yücedağ
+- Buse Nur Demirbaş
+- 💡Teknik Destek: Abdullah Kuş
 
 **Projenin temel amacı, bir kafe işletmesinin:**
 
